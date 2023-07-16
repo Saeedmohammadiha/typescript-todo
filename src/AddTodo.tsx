@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import { Grid , Button, TextField} from "@mui/material";
-import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    background: "#fff",
-  },
-}));
 
 function AddTodo({
   setData,
 }: {
   setData: React.Dispatch<React.SetStateAction<Todo[]>>;
 }) {
-  const classes = useStyles();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -35,16 +28,14 @@ function AddTodo({
   return (
     <Grid container sx={{ width: "100%", margin: "20px 0" }}>
       <TextField
-        className={classes.root}
         fullWidth
         value={title}
-        sx={{ margin: "10px 0" }}
+        sx={{ margin: "10px 0", background: "#fff" }}
         placeholder="Title"
         onChange={(e) => setTitle(e.target.value)}
       />
       <TextField
-        className={classes.root}
-        sx={{ margin: "10px 0" }}
+        sx={{ margin: "10px 0" , background: "#fff"}}
         value={description}
         fullWidth
         multiline

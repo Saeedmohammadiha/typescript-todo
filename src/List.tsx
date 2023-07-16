@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { makeStyles } from "@mui/styles";
 import {
   Checkbox,
   Grid,
@@ -21,11 +20,7 @@ enum FilterType {
   Incomplete,
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    background: "#fff",
-  },
-}));
+
 
 function List({
   data,
@@ -34,7 +29,6 @@ function List({
   data: Todo[];
   setData: React.Dispatch<React.SetStateAction<Todo[]>>;
 }) {
-  const classes = useStyles();
   const [filter, setFilter] = useState(FilterType.All);
 
   const handleCheckboxChange = (id: number) => {
@@ -63,7 +57,7 @@ function List({
   return (
     <>
       <Box sx={{ minWidth: 120 }}>
-        <FormControl fullWidth className={classes.root}>
+        <FormControl fullWidth sx={{background: "#fff"}} >
           <InputLabel id="Filter">Filter</InputLabel>
           <Select
             labelId="Filter"
